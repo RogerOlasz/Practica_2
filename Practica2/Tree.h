@@ -80,7 +80,7 @@ public:
 		DNode<TreeNode*>* item = children.getFirst();
 		unsigned int mid = children.Count() / 2;
 
-		for (unsigned int i = 0; i < mid; ++i, item = item->next)
+		for (unsigned int i = 0; i < mid; i++, item = item->next)
 		{
 			item->data->InOrderRecursive(list);
 		}
