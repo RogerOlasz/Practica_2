@@ -63,6 +63,18 @@ public:
 			
 	}
 
+	void PostOrderRecursive(DList<TreeNode<TreeData>*>* list)
+	{
+		DNode<TreeNode*>* item = children.getFirst();
+
+		for (; item != NULL; item = item->next)
+		{
+			item->data->PostOrderRecursive(list);
+		}
+			
+		list->Add(this);
+	}
+
 	void InOrderRecursive(DList<TreeNode<TreeData>*>* list) //Leave odd TreeNode on right
 	{
 		DNode<TreeNode*>* item = children.getFirst();
@@ -78,20 +90,7 @@ public:
 		for (; item != NULL; item = item->next)
 		{
 			item->data->InOrderRecursive(list);
-		}
-			
-	}
-
-	void PostOrderRecursive(DList<TreeNode<TreeData>*>* list)
-	{
-		DNode<TreeNode*>* item = children.getFirst();
-
-		for (; item != NULL; item = item->next)
-		{
-			item->data->PostOrderRecursive(list);
-		}
-			
-		list->Add(this);
+		}	
 	}
 
 	TreeNode<TreeData>* FindRecursive(const TreeData& node) //To find any TreeNode
