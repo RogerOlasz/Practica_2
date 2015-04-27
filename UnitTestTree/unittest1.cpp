@@ -186,7 +186,7 @@ namespace UnitTestTree
 			Assert::IsTrue((char)my_tree[9]->data == 'A');
 		}
 
-		TEST_METHOD(InOrderIterative)
+		/*TEST_METHOD(InOrderIterative)
 		{
 			Tree<char> tree1('A');
 
@@ -215,6 +215,8 @@ namespace UnitTestTree
 			Assert::IsTrue((char)my_tree[7]->data == 'H');
 			Assert::IsTrue((char)my_tree[8]->data == 'I');
 			Assert::IsTrue((char)my_tree[9]->data == 'J');
-		}
+		}*/
+
+
 	};
 }
