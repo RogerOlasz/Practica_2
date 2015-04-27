@@ -221,12 +221,12 @@ namespace UnitTestTree
 		{
 			Tree<int> tree1(0);
 
-			tree1.Add(10, 0);
-			tree1.Add(20, 0);
-			tree1.Add(30, 0);
-			tree1.Add(400, 10);
-			tree1.Add(500, 10);
-			tree1.Add(600, 10);
+			tree1.Add(1, 0);
+			tree1.Add(2, 0);
+			tree1.Add(3, 0);
+			tree1.Add(40, 10);
+			tree1.Add(50, 10);
+			tree1.Add(60, 10);
 
 			tree1.Clear();
 
