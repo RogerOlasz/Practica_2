@@ -29,6 +29,27 @@ public:
 		node->parent = this;
 	}
 
+	bool RemoveChild(TreeNode* node)
+	{
+		bool ret = false;
+		DNode<TreeNode*>* item = children.getFirst();
+
+		for (; item != NULL; item = item->next)
+		{
+			TreeNode* son = item->data;
+
+			if (node == son)
+			{
+				children.Del(item);
+				node->parent = NULL;
+				ret = true;
+				break;
+			}
+		}
+
+	return ret;
+	}
+
 	void PreOrderRecursive(DList<TreeNode<TreeData>*>* list)
 	{
 		list->Add(this);
@@ -100,7 +121,7 @@ public:
 	{
 		list->Add(this);
 
-		DNode<TreeNode*>* item = children.start;
+		DNode<TreeNode*>* item = children.getFirst();
 
 		for (; item != NULL; item = item->next)
 		{

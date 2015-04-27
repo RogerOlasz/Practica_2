@@ -217,6 +217,24 @@ namespace UnitTestTree
 			Assert::IsTrue((char)my_tree[9]->data == 'J');
 		}*/
 
+		TEST_METHOD(TreeClear)
+		{
+			Tree<int> tree1(0);
+
+			tree1.Add(10, 0);
+			tree1.Add(20, 0);
+			tree1.Add(30, 0);
+			tree1.Add(400, 10);
+			tree1.Add(500, 10);
+			tree1.Add(600, 10);
+
+			tree1.Clear();
+
+			DList<TreeNode<int>*> list;
+			tree1.root_node.CollectAll(&list);
+
+			Assert::AreEqual((int)list.Count(), 1);
+		}
 
 	};
 }
