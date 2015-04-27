@@ -205,13 +205,13 @@ namespace UnitTestTree
 
 			Assert::IsTrue(my_tree.Count() == 10);
 
-			Assert::IsTrue((char)my_tree[0]->data == 'A');
+			Assert::IsTrue((char)my_tree[0]->data == 'C');
 			Assert::IsTrue((char)my_tree[1]->data == 'B');
-			Assert::IsTrue((char)my_tree[2]->data == 'C');
-			Assert::IsTrue((char)my_tree[3]->data == 'D');
+			Assert::IsTrue((char)my_tree[2]->data == 'D');
+			Assert::IsTrue((char)my_tree[3]->data == 'F');
 			Assert::IsTrue((char)my_tree[4]->data == 'E');
-			Assert::IsTrue((char)my_tree[5]->data == 'F');
-			Assert::IsTrue((char)my_tree[6]->data == 'G');
+			Assert::IsTrue((char)my_tree[5]->data == 'G');
+			Assert::IsTrue((char)my_tree[6]->data == 'A');
 			Assert::IsTrue((char)my_tree[7]->data == 'H');
 			Assert::IsTrue((char)my_tree[8]->data == 'I');
 			Assert::IsTrue((char)my_tree[9]->data == 'J');
