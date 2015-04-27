@@ -224,9 +224,9 @@ namespace UnitTestTree
 			tree1.Add(1, 0);
 			tree1.Add(2, 0);
 			tree1.Add(3, 0);
-			tree1.Add(40, 10);
-			tree1.Add(50, 10);
-			tree1.Add(60, 10);
+			tree1.Add(40, 1);
+			tree1.Add(50, 1);
+			tree1.Add(60, 1);
 
 			tree1.Clear();
 
