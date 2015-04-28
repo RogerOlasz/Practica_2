@@ -231,31 +231,13 @@ public:
 		}
 	}
 
-	/*void InOrderIterative(DList<TreeNode<TreeData>*>* list)
+	void InOrderIterative(DList<TreeNode<TreeData>*>* list)
 	{
 		Stack<TreeNode<TreeData>*> stack;
 		TreeNode<TreeData>* node = &root_node;
 
-		while (node != NULL || stack.Pop(node))
-		{
-			list->Add(node);
-			DNode<TreeNode<TreeData>*>* item = node->children.getLast();
-
-			for (; item != node->children.getFirst(); item = item->previous)
-			{
-				stack.Push(item->data);
-			}
-
-			if (item != NULL)
-			{
-				node = item->data;
-			}
-			else
-			{
-				node = NULL;
-			}
-		}
-	}*/
+		
+	}
 
 	void Add(const TreeData& data)
 	{
