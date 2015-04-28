@@ -236,11 +236,32 @@ public:
 		Stack<TreeNode<TreeData>*> stack;
 		TreeNode<TreeData>* node = &root_node;
 
-		while (node != NULL || stack.Pop(node))
+		while (node->children.Count != NULL)
+		{
+			DNode<TreeNode<TreeData>*>* item = node->children.getFirst();
+			unsigned int mid = node->children.Count() / 2;
+
+			for (unsigned int i = 0; i < mid; i++, item = item->next)
+			{
+				stack.Push(item);
+				node = item;
+			}
+		}
+
+		stack.Pop(node);
+		list->Add(node);
+		node = node->parent;
+
+		while (node->children.Count != NULL)
 		{
 			DNode<TreeNode<TreeData>*>* item = node->children.getLast();
+			unsigned int mid = node->children.Count() / 2;
 
-			
+			for (unsigned int i = 0; i < mid; i++, item = item->next)
+			{
+				stack.Push(item);
+				node = item;
+			}
 		}
 	}
 
