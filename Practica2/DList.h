@@ -177,7 +177,7 @@ public:
 		++index;
 		tmp = tmp->next;
 		}
-	return (-1);
+	return (-1); //Doesn't exist nodes
 	}
 
 	TYPE& operator  [](const unsigned int index)

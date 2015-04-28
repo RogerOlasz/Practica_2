@@ -236,7 +236,12 @@ public:
 		Stack<TreeNode<TreeData>*> stack;
 		TreeNode<TreeData>* node = &root_node;
 
-		
+		while (node != NULL || stack.Pop(node))
+		{
+			DNode<TreeNode<TreeData>*>* item = node->children.getLast();
+
+			
+		}
 	}
 
 	void Add(const TreeData& data)
