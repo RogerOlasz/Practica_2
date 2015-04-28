@@ -116,7 +116,7 @@ public:
 	return result;
 	}
 
-	void CollectAll(DList<TreeNode*>* list) //To collect all TreeNodes
+	void CollectAll(DList<TreeNode*>* list) //To collect all TreeNodes into list
 	{
 		list->Add(this);
 
@@ -129,7 +129,7 @@ public:
 		}
 	}
 
-	void CollectAllData(DList<TreeData>* list)//To collect all TreeNodes data
+	void CollectAllData(DList<TreeData>* list)//To collect all TreeNodes data into list
 	{
 		list->Add(data);
 
@@ -150,7 +150,7 @@ class Tree
 {
 public:
 
-	TreeNode<TreeData>	root_node;
+	TreeNode<TreeData> root_node;
 
 public:
 
