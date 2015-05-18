@@ -126,6 +126,24 @@ public:
 		return false;
 	}
 
+	bool IsOnList(const DNode<TYPE> *node_to_check) const
+	{
+		if (start != NULL && node_to_check != NULL)
+		{
+			DNode<TYPE> *item = start;
+			while (item != NULL)
+			{
+				if (item->data == node_to_check->data)
+				{
+					return true;
+				}
+					
+				item = item->next;
+			}
+		}
+		return false;
+	}
+
 	DNode<TYPE> *getFirst() const
 	{
 		return start;
