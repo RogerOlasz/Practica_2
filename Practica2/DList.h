@@ -2,6 +2,7 @@
 #define __DList_H__
 
 #include <iostream>
+#include <assert.h>
 
 template<class TYPE>
 struct  DNode
@@ -198,20 +199,39 @@ public:
 			return NULL;
 		}
 
-	TYPE& operator [](const unsigned int index)
+	TYPE& operator[](unsigned int index)
 	{
-		unsigned int pos = 0;
+		unsigned int position = 0;
 		DNode<TYPE>* item = start;
 
 		while (item != NULL)
 		{
-			if (pos == index)
+			if (position == index)
 			{
 				break;
 			}
-		 pos++;
+		 position++;
 		 item = item->next;
 		}
+	 assert(item);
+	 return item->data;
+	}
+
+	const TYPE& operator[](const unsigned int index) const
+	{
+		unsigned int position = 0;
+		DNode<TYPE>* item = start;
+
+		while (item != NULL)
+		{
+			if (position == index)
+			{
+				break;
+			}
+			position++;
+			item = item->next;
+		}
+	 assert(item);
 	 return item->data;
 	}
 };
