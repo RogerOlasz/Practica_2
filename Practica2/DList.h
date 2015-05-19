@@ -144,6 +144,24 @@ public:
 		return false;
 	}
 
+	int Find(const TYPE& data)
+	{
+		DNode<TYPE>* tmp = start;
+		unsigned int index = 0;
+
+		while (tmp != NULL)
+		{
+			if (tmp->data == data)
+			{
+				return (index);
+			}
+
+			++index;
+			tmp = tmp->next;
+		}
+		return (-1); //Doesn't exist nodes
+	}
+
 	DNode<TYPE> *getFirst() const
 	{
 		return start;
@@ -180,30 +198,10 @@ public:
 			return NULL;
 		}
 
-	int Find(const TYPE& data)
+	TYPE& operator [](const unsigned int index)
 	{
-		DNode<TYPE>* tmp = start;
-		unsigned int index = 0;
-
-		while (tmp != NULL)
-		{
-			if (tmp->data == data)
-			{
-				return (index);
-			}
-
-		++index;
-		tmp = tmp->next;
-		}
-	return (-1); //Doesn't exist nodes
-	}
-
-	TYPE& operator  [](const unsigned int index)
-	{
-		long pos;
-		DNode<TYPE>* item;
-		pos = 0;
-		item = start;
+		unsigned int pos = 0;
+		DNode<TYPE>* item = start;
 
 		while (item != NULL)
 		{
@@ -211,10 +209,10 @@ public:
 			{
 				break;
 			}
-		++pos;
-		item = item->next;
+		 pos++;
+		 item = item->next;
 		}
-	return(item->data);
+	 return item->data;
 	}
 };
 
