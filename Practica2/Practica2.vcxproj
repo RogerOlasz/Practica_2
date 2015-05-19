@@ -69,6 +69,8 @@
   <ItemGroup>
     <ClInclude Include="DList.h" />
     <ClInclude Include="Stack.h" />
+    <ClInclude Include="Swap.h" />
+    <ClInclude Include="SwapPoint.h" />
     <ClInclude Include="Tree.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

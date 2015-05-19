@@ -225,31 +225,6 @@ public:
 	 return counter_cmp;
 	}
 
-	unsigned int BubbleSortPointer()
-	{
-		unsigned int counter;
-		unsigned int counter_cmp = 0;
-
-		do
-		{
-			DNode<TYPE>* item = start;
-			counter = 0;
-			while (item != NULL && item->next != NULL)
-			{
-				counter_cmp++;
-				if (item->data > item->next->data)
-				{
-					SwapPoint(item, item->next;
-					counter++;
-				}
-				item = item->next;
-			}
-
-		} while (counter != 0);
-
-		return counter_cmp;
-	}
-
 	TYPE& operator[](unsigned int index)
 	{
 		unsigned int position = 0;

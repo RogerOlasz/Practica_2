@@ -1,16 +1,23 @@
 #include "DList.h"
+#include <random>
+
 
 int main(int argc, char** argv)
 {
 	DList<int> List1;
 
-	List1.Add(5);
-	List1.Add(8);
-	List1.Add(2);
-	List1.Add(12);
-	List1.Add(4);
+	unsigned int count = 0;
 
-	printf("%d", List1[1]);
+	for (unsigned int i = 0; i <= 10000; i++)
+	{
+		List1.Add(rand());
+	}
+
+	printf("%d\n%d\n", count, List1.Count());
+
+	count = List1.BubbleSort();
+
+	printf("%d\n%d", count, List1.Count());
 
 	getchar();
 
