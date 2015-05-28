@@ -219,23 +219,6 @@ public:
 		return(item->data);
 	}
 
-	int Find(const TYPE& data)
-	{
-		DNode<TYPE>* tmp = start;
-		unsigned int index = 0;
-
-		while (tmp != NULL)
-		{
-			if (tmp->data == data)
-			{
-				return (index);
-			}
-
-		++index;
-		tmp = tmp->next;
-		}
-	return (-1); //Doesn't exist nodes
-	}
 };
 
 #endif //__DList_H__
