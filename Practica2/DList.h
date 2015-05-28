@@ -200,6 +200,7 @@ public:
 			return NULL;
 		}
 
+<<<<<<< HEAD
 	unsigned int BubbleSort()
 	{
 		unsigned int counter;
@@ -251,38 +252,22 @@ public:
 	}
 
 	TYPE& operator[](unsigned int index)
+=======
+	TYPE& operator [](const unsigned int index)
+>>>>>>> parent of e99993e... aa
 	{
-		unsigned int position = 0;
+		unsigned int pos = 0;
 		DNode<TYPE>* item = start;
 
 		while (item != NULL)
 		{
-			if (position == index)
+			if (pos == index)
 			{
 				break;
 			}
-		 position++;
+		 pos++;
 		 item = item->next;
 		}
-	 assert(item);
-	 return item->data;
-	}
-
-	const TYPE& operator[](const unsigned int index) const
-	{
-		unsigned int position = 0;
-		DNode<TYPE>* item = start;
-
-		while (item != NULL)
-		{
-			if (position == index)
-			{
-				break;
-			}
-			position++;
-			item = item->next;
-		}
-	 assert(item);
 	 return item->data;
 	}
 };
