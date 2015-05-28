@@ -147,6 +147,7 @@ public:
 		return false;
 	}
 
+<<<<<<< HEAD
 	int Find(const TYPE& data)
 	{
 		DNode<TYPE>* tmp = start;
@@ -167,6 +168,8 @@ public:
 
 =======
 >>>>>>> parent of ce86ce9... A
+=======
+>>>>>>> parent of 213d2f1... Added operator [] DList
 	DNode<TYPE> *getFirst() const
 	{
 		return start;
@@ -203,6 +206,7 @@ public:
 			return NULL;
 		}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 	unsigned int BubbleSort()
 	{
@@ -258,9 +262,32 @@ public:
 =======
 	TYPE& operator [](const unsigned int index)
 >>>>>>> parent of e99993e... aa
+=======
+	int Find(const TYPE& data)
 	{
-		unsigned int pos = 0;
-		DNode<TYPE>* item = start;
+		DNode<TYPE>* tmp = start;
+		unsigned int index = 0;
+
+		while (tmp != NULL)
+		{
+			if (tmp->data == data)
+			{
+				return (index);
+			}
+
+		++index;
+		tmp = tmp->next;
+		}
+	return (-1); //Doesn't exist nodes
+	}
+
+	TYPE& operator  [](const unsigned int index)
+>>>>>>> parent of 213d2f1... Added operator [] DList
+	{
+		long pos;
+		DNode<TYPE>* item;
+		pos = 0;
+		item = start;
 
 		while (item != NULL)
 		{
@@ -268,10 +295,10 @@ public:
 			{
 				break;
 			}
-		 pos++;
-		 item = item->next;
+		++pos;
+		item = item->next;
 		}
-	 return item->data;
+	return(item->data);
 	}
 };
 
