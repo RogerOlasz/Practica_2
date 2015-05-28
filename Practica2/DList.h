@@ -128,7 +128,6 @@ public:
 		return false;
 	}
 
-<<<<<<< HEAD
 	bool IsOnList(const DNode<TYPE> *node_to_check) const
 	{
 		if (start != NULL && node_to_check != NULL)
@@ -147,7 +146,7 @@ public:
 		return false;
 	}
 
-<<<<<<< HEAD
+
 	int Find(const TYPE& data)
 	{
 		DNode<TYPE>* tmp = start;
@@ -165,11 +164,6 @@ public:
 		}
 		return (-1); //Doesn't exist nodes
 	}
-
-=======
->>>>>>> parent of ce86ce9... A
-=======
->>>>>>> parent of 213d2f1... Added operator [] DList
 	DNode<TYPE> *getFirst() const
 	{
 		return start;
@@ -206,63 +200,25 @@ public:
 			return NULL;
 		}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-	unsigned int BubbleSort()
+	TYPE& operator  [](const unsigned int index)
 	{
-		unsigned int counter;
-		unsigned int counter_cmp = 0;
+		long pos;
+		DNode<TYPE>* item;
+		pos = 0;
+		item = start;
 
-		do
+		while (item != NULL)
 		{
-			DNode<TYPE>* item = start;
-			counter = 0;
-			while (item != NULL && item->next != NULL)
+			if (pos == index)
 			{
-				counter_cmp++;
-				if (item->data > item->next->data)
-				{
-					Swap(item->data, item->next->data);
-					counter++;
-				}
-			 item = item->next;
-			}	
-			
-		} while (counter != 0);
-
-	 return counter_cmp;
-	}
-
-	unsigned int BubbleSortPointer()
-	{
-		unsigned int counter;
-		unsigned int counter_cmp = 0;
-
-		do
-		{
-			DNode<TYPE>* item = start;
-			counter = 0;
-			while (item != NULL && item->next != NULL)
-			{
-				counter_cmp++;
-				if (item->data > item->next->data)
-				{
-					SwapPoint(item, item->next;
-					counter++;
-				}
-				item = item->next;
+				break;
 			}
-
-		} while (counter != 0);
-
-		return counter_cmp;
+			++pos;
+			item = item->next;
+		}
+		return(item->data);
 	}
 
-	TYPE& operator[](unsigned int index)
-=======
-	TYPE& operator [](const unsigned int index)
->>>>>>> parent of e99993e... aa
-=======
 	int Find(const TYPE& data)
 	{
 		DNode<TYPE>* tmp = start;
@@ -279,26 +235,6 @@ public:
 		tmp = tmp->next;
 		}
 	return (-1); //Doesn't exist nodes
-	}
-
-	TYPE& operator  [](const unsigned int index)
->>>>>>> parent of 213d2f1... Added operator [] DList
-	{
-		long pos;
-		DNode<TYPE>* item;
-		pos = 0;
-		item = start;
-
-		while (item != NULL)
-		{
-			if (pos == index)
-			{
-				break;
-			}
-		++pos;
-		item = item->next;
-		}
-	return(item->data);
 	}
 };
 
