@@ -128,6 +128,7 @@ public:
 		return false;
 	}
 
+<<<<<<< HEAD
 	bool IsOnList(const DNode<TYPE> *node_to_check) const
 	{
 		if (start != NULL && node_to_check != NULL)
@@ -164,6 +165,8 @@ public:
 		return (-1); //Doesn't exist nodes
 	}
 
+=======
+>>>>>>> parent of ce86ce9... A
 	DNode<TYPE> *getFirst() const
 	{
 		return start;

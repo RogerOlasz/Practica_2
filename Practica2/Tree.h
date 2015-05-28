@@ -231,33 +231,36 @@ public:
 		}
 	}
 
-	void InOrderIterative(DList<TreeNode<TreeData>*> *list)
+	void InOrderIterative(DList<TreeNode<TreeData>*>* list)
 	{
 		Stack<TreeNode<TreeData>*> stack;
-		TreeNode<TreeData> *node = &root_node;
-		stack.Push(node);
+		TreeNode<TreeData>* node = &root_node;
 
-		while (stack.Pop(node) == true)
+		while (node->children.Count != NULL)
 		{
-			// Odd number of sons -> (x + 1  left) | (x right)
-			DNode<TreeNode<TreeData>*> *last_item = node->children.getLast();
-			DNode<TreeNode<TreeData>*> *first_item = node->children.getFirst();
-			if (last_item != NULL && list->IsOnList(first_item) == false)
+			DNode<TreeNode<TreeData>*>* item = node->children.getFirst();
+			unsigned int mid = node->children.Count() / 2;
+
+			for (unsigned int i = 0; i < mid; i++, item = item->next)
 			{
-				unsigned int middle = node->children.Count() / 2;
-				for (unsigned int i = 0; i < middle; i++, last_item = last_item->previous)
-				{
-					stack.Push(last_item->data);
-				}
-				stack.Push(node);
-				for (unsigned int i = middle; i < node->children.Count(); i++, last_item = last_item->previous)
-				{
-					stack.Push(last_item->data);
-				}
+				stack.Push(item);
+				node = item;
 			}
-			else
+		}
+
+		stack.Pop(node);
+		list->Add(node);
+		node = node->parent;
+
+		while (node->children.Count != NULL)
+		{
+			DNode<TreeNode<TreeData>*>* item = node->children.getLast();
+			unsigned int mid = node->children.Count() / 2;
+
+			for (unsigned int i = 0; i < mid; i++, item = item->next)
 			{
-				list->Add(node);
+				stack.Push(item);
+				node = item;
 			}
 		}
 	}
